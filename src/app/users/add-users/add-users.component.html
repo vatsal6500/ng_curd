@@ -1,0 +1,32 @@
+<form [formGroup]="addUserForm" (submit)="createUser()">
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <td>
+                <input type="text" formControlName="name">
+            </td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td>
+                <input type="radio" formControlName="gender" value="male"> Male
+                <input type="radio" formControlName="gender" value="female"> Female
+            </td>
+        </tr>
+
+        <tr>
+            <th>Age</th>
+            <td>
+                <input type="number" formControlName="age">
+            </td>
+        </tr>
+
+        <tr>
+            <th></th>
+            <td>
+                <button>Add User</button>
+            </td>
+        </tr>
+
+    </table>
+</form>

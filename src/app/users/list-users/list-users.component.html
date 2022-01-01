@@ -1,0 +1,21 @@
+<div *ngIf="listUsers">Total Users : {{listUsers.length}}</div>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <!-- <th>Gender</th>
+        <th>Age</th>
+        <th>Date of Joining</th> -->
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let user of listUsers">
+        <td>{{user.name}}</td>
+        <!-- <td>{{user.gender}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.date}}</td> -->
+        <td>
+            <a [routerLink]="['view',user._id]">View</a> |
+            <a [routerLink]="['edit',user._id]">Edit</a> |
+            <a [routerLink]="['delete',user._id]">Delete</a>
+        </td>
+    </tr>
+</table>
