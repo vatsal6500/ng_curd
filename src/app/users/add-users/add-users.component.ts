@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -21,9 +21,9 @@ export class AddUsersComponent implements OnInit {
   ngOnInit(): void {
 
     this.addUserForm = this.formBuilder.group({
-      'name' : new FormControl(''),
-      'gender' : new FormControl(''),
-      'age' : new FormControl(''),
+      'name' : new FormControl('',[Validators.required,Validators.minLength(2)]),
+      'gender' : new FormControl('',[Validators.required]),
+      'age' : new FormControl('',[Validators.required,Validators.max(100),Validators.min(18)]),
     });
   }
 
