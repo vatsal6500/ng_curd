@@ -1,0 +1,8 @@
+table,tr,td,th{
+    border: 1px;
+    border-style: inset;
+    padding: 10px;
+}
+h2{
+    margin-left: 20%;
+}

@@ -1,7 +1,9 @@
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" opened>
-    <a routerLink="create">Add User</a><br>
-    <a routerLink="list">List Users</a> <br>
+    <div class="sidebar">
+      <a class="s1" routerLink="create">Add User</a><br>
+      <a class="s2" routerLink="list">List Users</a> <br>
+    </div>
   </mat-drawer>
   <mat-drawer-content>
     <router-outlet></router-outlet>

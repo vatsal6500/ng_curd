@@ -2,3 +2,9 @@
     width: 90%;
     height: 90%;
   }
+
+.sidebar{
+  display: flexbox;
+  padding: 10px;
+  margin: 5px;
+}
