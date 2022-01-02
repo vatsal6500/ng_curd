@@ -20,12 +20,17 @@ export class DeleteUserComponent implements OnInit {
     });
 
     if(this.userId){
-      this.userService.deleteUser(this.userId).subscribe(data => {
-        console.log("Data Deleted");
+      if(confirm('Are You Sure?')){
+        this.userService.deleteUser(this.userId).subscribe(data => {
+          console.log("Data Deleted");
+          this.router.navigate(['list']);
+        },err => {
+          console.log(err);
+        })
+      }
+      else{
         this.router.navigate(['list']);
-      },err => {
-        console.log(err);
-      })
+      }
     }
   }
 
