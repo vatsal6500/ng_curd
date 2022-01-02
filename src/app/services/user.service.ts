@@ -27,4 +27,8 @@ export class UserService {
   deleteUser(id: string){
     return this.http.get(this.api + 'user/delete/' + id);
   }
+
+  updateUser(id:string ,userObj:any){
+    return this.http.put(this.api + 'user/edit/' + id,userObj);
+  }
 }
