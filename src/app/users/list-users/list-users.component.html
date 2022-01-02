@@ -7,6 +7,9 @@
         <th>Date of Joining</th> -->
         <th>Action</th>
     </tr>
+    <span *ngIf="listUsers">
+        <span *ngIf="listUsers.length==0">Data Not Found</span>
+    </span>
     <tr *ngFor="let user of listUsers">
         <td>{{user.name}}</td>
         <!-- <td>{{user.gender}}</td>
