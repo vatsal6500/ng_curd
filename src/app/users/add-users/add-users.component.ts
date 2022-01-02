@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,13 +11,15 @@ import { UserService } from 'src/app/services/user.service';
 export class AddUsersComponent implements OnInit {
 
   addUserForm: FormGroup = new FormGroup({});  
-  image: any;
+  userId: any;
+  userDetails: any;
 
   constructor(private formBuilder: FormBuilder, 
     private userService:UserService,
     private router:Router) { }
 
   ngOnInit(): void {
+
     this.addUserForm = this.formBuilder.group({
       'name' : new FormControl(''),
       'gender' : new FormControl(''),
